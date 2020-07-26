@@ -22,6 +22,12 @@ git clone https://gitlab.com/eufs/eufs_msgs
 git clone https://gitlab.com/eufs/eufs_sim
 ```
 
+Get the following if you would like to test the LiDAR pipeline.
+```
+git clone https://github.com/MURDriverless/lidar_dev && git checkout task-179-detect-accel
+git clone https://github.com/MURDriverless/linefit_ground_segmentation
+```
+
 Then install the `teleop_twist_keyboard` for controlling the robot movement.
 ```
 sudo apt-get install ros-noetic-teleop-twist-keyboard
@@ -38,7 +44,12 @@ source devel/setup.bash
 Launch the robot simulation, opening Gazebo simulator and RViz for point cloud visualisation.
 
 ```
-roslaunch tortoisebot tortoisebot.launch
+# choose one
+roslaunch tortoisebot tortoisebot.launch  # empty world
+roslaunch tortoisebot acceleration.launch # accel track
+
+# run following for lidar pipeline
+roslaunch lidar_dev cluster_pipeline.launch
 
 # run in another terminal
 rosrun teleop_twist_keyboard teleop_twist_keyboard.py
@@ -47,6 +58,7 @@ rosrun teleop_twist_keyboard teleop_twist_keyboard.py
 You should also be greeted with something like the simulation shown below.
 
 ![lidar-sim](assets/lidar-sim.gif)
+
 
 ```
 Reading from the keyboard  and Publishing to Twist!
@@ -64,15 +76,22 @@ anything else : stop
 CTRL-C to quit
 ```
 
+If you opted for the accel track and LiDAR pipeline, you will see the cone detections.
+
+![lidar-sim-cones-2](assets/lidar-sim-cones-2.gif)
+
 ## Folder Structures
 
 ```
+├── assets
 ├── launch
-│   └── tortoisebot.launch      (launch file & publish frequency)
+│   ├── acceleration.launch      (launch accel track)
+│   ├── load_tortoisebot.launch  (load tortoisebot for accel track)
+│   └── tortoisebot.launch       (launch bot with empty world)
 ├── rviz
-│   └── tortoisebot.rviz        (tells rviz to point cloud)
+│   └── tortoisebot.rviz
 ├── urdf
-│   └── tortoisebot.urdf.xacro  (defines robot & LiDAR hz, horizontal res)
+│   └── tortoisebot.urdf.xacro   (defines robot & LiDAR hz, horizontal res)
 ├── CMakeLists.txt
 ├── package.xml
 └── README.md
@@ -87,3 +106,4 @@ CTRL-C to quit
 ## Todo
 - [x] Create appropriate fork of `ouster_example`
 - [x] Add instructions for setting up the robot & LiDAR from scratch
+- [x] Add instructions for testing with LiDAR pipeline
