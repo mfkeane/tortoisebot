@@ -9,12 +9,15 @@
     <arg name="pitch" default="0.0" />
     <arg name="yaw" default="0.0" />
 
+    <!-- Define the model we want to -->
+    <arg name="model" default="$(find tortoisebot)/urdf/tortoisebot.urdf.xacro" />
+
     <!-- Convert model -->
     <param name="robot_description" command="$(find xacro)/xacro '$(arg model)'" />
 
     <!-- Spawn model -->
     <!-- <node pkg="gazebo_ros" type="spawn_model" name="spawn_sensor" output="screen" args="-urdf -param robot_description -model tortoisebot" /> -->
-    <node name="spawn_platform" pgk="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model tortoisebot
+    <node name="spawn_platform" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model tortoisebot
     -gazebo_namespace /gazebo
     -x $(arg x) -y $(arg y) -z $(arg z)
     -R $(arg roll) -P $(arg pitch) -Y $(arg yaw)" />

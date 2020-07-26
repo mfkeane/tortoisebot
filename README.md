@@ -8,6 +8,7 @@ This was tested in Ubuntu 18.04, ROS Melodic, Gazebo 9.0.0, and assumes that you
 
 * `hector_gazebo` (for simulating Ouster IMU)
 * `ouster_example` (forked by Wil Selby)
+* `eufs` (packages for simulation environment)
 * `teleop_twist_keyboard`
 
 Inside your `catkin_ws/src`, run the following to setup the required packages.
@@ -16,6 +17,9 @@ Inside your `catkin_ws/src`, run the following to setup the required packages.
 git clone https://github.com/stevenlee090/tortoisebot
 git clone https://github.com/stevenlee090/ouster_example
 git clone https://github.com/tu-darmstadt-ros-pkg/hector_gazebo
+
+git clone https://gitlab.com/eufs/eufs_msgs
+git clone https://gitlab.com/eufs/eufs_sim
 ```
 
 Then install the `teleop_twist_keyboard` for controlling the robot movement.
