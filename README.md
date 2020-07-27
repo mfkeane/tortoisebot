@@ -19,8 +19,8 @@ Update Gazebo to the latest minor version 9.13.2 for use with ROS Melodic, other
 Inside your `catkin_ws/src`, run the following to setup the required packages.
 
 ```
-git clone https://github.com/stevenlee090/tortoisebot
-git clone https://github.com/stevenlee090/ouster_example
+git clone https://github.com/MURDriverless/tortoisebot
+git clone https://github.com/MURDriverless/ouster_example
 git clone https://github.com/tu-darmstadt-ros-pkg/hector_gazebo
 
 git clone https://gitlab.com/eufs/eufs_msgs
