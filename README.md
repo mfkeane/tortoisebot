@@ -19,7 +19,7 @@ Update Gazebo to the latest minor version 9.13.2 for use with ROS Melodic, other
 Inside your `catkin_ws/src`, run the following to setup the required packages.
 
 ```
-git clone https://github.com/MURDriverless/tortoisebot
+git clone https://github.com/MURDriverless/tortoisebot --branch task-179-detect-accel
 git clone https://github.com/MURDriverless/ouster_example
 git clone https://github.com/tu-darmstadt-ros-pkg/hector_gazebo
 
@@ -29,9 +29,10 @@ git clone https://gitlab.com/eufs/eufs_sim
 
 Get the following if you would like to test the LiDAR pipeline.
 ```
-git clone https://github.com/MURDriverless/lidar_dev && git checkout task-179-detect-accel
+git clone https://github.com/MURDriverless/lidar_dev --branch task-179-detect-accel
 git clone https://github.com/MURDriverless/linefit_ground_segmentation
 git clone https://github.com/catkin/catkin_simple
+git clone https://github.com/ethz-asl/glog_catkin.git
 ```
 
 Then install the `teleop_twist_keyboard` for controlling the robot movement.
@@ -44,6 +45,8 @@ Build the packages at your `catkin_ws`.
 catkin build
 source devel/setup.bash
 ```
+
+If there is build error, modify the `CMakeLists.txt` in `eufs_gazebo_plugins` to use `add_compile_options(-std=c++14)`.
 
 ## Running the simulation
 
