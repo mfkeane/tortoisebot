@@ -4,12 +4,17 @@ This repository contains a simple Gazebo robot with differential drive plugin wh
 
 ## Dependencies & Setup
 
-This was tested in Ubuntu 18.04, ROS Melodic, Gazebo 9.0.0, and assumes that you have catkin tools installed.
+This was tested in Ubuntu 18.04, ROS Melodic, Gazebo 9.13.2, and assumes that you have catkin tools installed.
 
 * `hector_gazebo` (for simulating Ouster IMU)
 * `ouster_example` (forked by Wil Selby)
 * `eufs` (packages for simulation environment)
 * `teleop_twist_keyboard`
+
+Update Gazebo to the latest minor version 9.13.2 for use with ROS Melodic, otherwise `gpu_ray` (GPU accelerated LiDAR simulation) will most likely fail to run.
+
+1. Follow upgrade instructions [here](http://gazebosim.org/tutorials?tut=install_ubuntu&cat=install#Alternativeinstallation:step-by-step), but instead of getting the latest `gazebo11`, we want `gazebo9`.
+2. Upgrade math package `sudo apt upgrade libignition-math2`
 
 Inside your `catkin_ws/src`, run the following to setup the required packages.
 
@@ -26,6 +31,7 @@ Get the following if you would like to test the LiDAR pipeline.
 ```
 git clone https://github.com/MURDriverless/lidar_dev && git checkout task-179-detect-accel
 git clone https://github.com/MURDriverless/linefit_ground_segmentation
+git clone https://github.com/catkin/catkin_simple
 ```
 
 Then install the `teleop_twist_keyboard` for controlling the robot movement.
@@ -107,3 +113,4 @@ If you opted for the accel track and LiDAR pipeline, you will see the cone detec
 - [x] Create appropriate fork of `ouster_example`
 - [x] Add instructions for setting up the robot & LiDAR from scratch
 - [x] Add instructions for testing with LiDAR pipeline
+- [x] Tested with `gpu_ray` for accelerated simulation, can basically run in real-time if supported GPU is used
