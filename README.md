@@ -33,6 +33,7 @@ git clone https://github.com/MURDriverless/lidar_dev --branch task-179-detect-ac
 git clone https://github.com/MURDriverless/linefit_ground_segmentation
 git clone https://github.com/catkin/catkin_simple
 git clone https://github.com/ethz-asl/glog_catkin.git
+git clone https://github.com/MURDriverless/mur_common --branch develop
 ```
 
 Then install the `teleop_twist_keyboard` for controlling the robot movement.
