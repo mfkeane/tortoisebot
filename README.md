@@ -1,6 +1,6 @@
 # TortoiseBot
 
-This repository contains a simple Gazebo robot with differential drive pluginand a hector_gazebo gps plugin which has a Ouster OS1-64 LiDAR mounted on it. Forked from stevenlee090's repo for use with the Vehicle State Estimation subsystem.
+This repository contains a simple Gazebo robot with differential drive pluginand a hector_gazebo gps plugin which has a Ouster OS1-64 LiDAR mounted on it. Forked from stevenlee090's repo for use with the Vehicle State Estimation Subsystem and `https://github.com/mfkeane/avse.git`
 
 ## Dependencies & Setup
 
@@ -20,7 +20,7 @@ git clone https://github.com/tu-darmstadt-ros-pkg/hector_gazebo
 
 Then install the `teleop_twist_keyboard` for controlling the robot movement.
 ```
-sudo apt-get install ros-noetic-teleop-twist-keyboard
+sudo apt-get install ros-melodic-teleop-twist-keyboard
 ```
 
 Build the packages at your `catkin_ws`.
@@ -79,7 +79,3 @@ CTRL-C to quit
 
 * [Simulating an Ouster OS1 LiDAR Sensor in ROS Gazebo and RViz](https://www.wilselby.com/2019/05/simulating-an-ouster-os-1-lidar-sensor-in-ros-gazebo-and-rviz/) by Wil Selby
 * Morgan Quigley, Brian Gerkey, William D. Smart - Programming Robots with ROS - A Practical Introduction to the Robot Operating System-O'Reilly Media (2015)
-
-## Todo
-- [x] Create appropriate fork of `ouster_example`
-- [x] Add instructions for setting up the robot & LiDAR from scratch
