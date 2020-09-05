@@ -1,6 +1,6 @@
 # TortoiseBot
 
-This repository contains a simple Gazebo robot with differential drive plugin which has a Ouster OS1-64 LiDAR mounted on it. 
+This repository contains a simple Gazebo robot with differential drive pluginand a hector_gazebo gps plugin which has a Ouster OS1-64 LiDAR mounted on it. Forked from stevenlee090's repo for use with the Vehicle State Estimation subsystem.
 
 ## Dependencies & Setup
 
@@ -13,7 +13,7 @@ This was tested in Ubuntu 18.04, ROS Melodic, Gazebo 9.0.0, and assumes that you
 Inside your `catkin_ws/src`, run the following to setup the required packages.
 
 ```
-git clone https://github.com/stevenlee090/tortoisebot
+git clone https://github.com/mfkeane/tortoisebot
 git clone https://github.com/stevenlee090/ouster_example
 git clone https://github.com/tu-darmstadt-ros-pkg/hector_gazebo
 ```
