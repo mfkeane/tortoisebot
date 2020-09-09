@@ -148,14 +148,30 @@
         <plugin name="gps_sensor" filename="libhector_gazebo_ros_gps.so">
             <alwaysOn>1</alwaysOn>
             <updateRate>10.0</updateRate>
-            <bodyName>base_footprint</bodyName>
+            <robotNamespace> gps </robotNamespace>
+            <bodyName>base_link</bodyName>
             <robotBaseFrame>base_link</robotBaseFrame>
-            <topicName>fix</topicName>
-            <velocityTopicName>fix_velocity</velocityTopicName>
-            <drift>5.0 5.0 5.0</drift>
-            <gaussianNoise>0.1 0.1 0.1</gaussianNoise>
+            <topicName>/fix</topicName>
+            <velocityTopicName>/fix_velocity</velocityTopicName>
+            <drift>0.0 0.0 0.0</drift>
+            <gaussianNoise>0.5 0.5 0.5</gaussianNoise>
             <velocityDrift>0 0 0</velocityDrift>
-            <velocityGaussianNoise>0.1 0.1 0.1</velocityGaussianNoise>
+            <velocityGaussianNoise>0.01 0.01 0.01</velocityGaussianNoise>
         </plugin>
     </gazebo>
+    <!-- TRUE GPS Sensor -->
+    <!--<gazebo>
+        <plugin name="true_gps" filename="libhector_gazebo_ros_gps.so">
+            <alwaysOn>1</alwaysOn>
+            <updateRate>10.0</updateRate>
+            <bodyName>base_footprint</bodyName>
+            <robotBaseFrame>base_link</robotBaseFrame>
+            <topicName>true_fix</topicName>
+            <velocityTopicName>true_fix_velocity</velocityTopicName>
+            <drift>0 0 0</drift>
+            <gaussianNoise>0 0 0 </gaussianNoise>
+            <velocityDrift>0 0 0</velocityDrift>
+            <velocityGaussianNoise>0 0 0</velocityGaussianNoise>
+        </plugin>
+    </gazebo> -->
 </robot>
